@@ -1,0 +1,282 @@
+---
+
+# Nginx vHost Template defintion for vhost-gen.py
+#
+# The 'feature' section contains optional features that can be enabled via
+# conf.yml and will then be replaced into the main vhost ('structure' section)
+# into their corresponding position:
+#
+#    __XDOMAIN_REQ__
+#    __PHP_FPM__
+#    __ALIASES__
+#    __DENIES__
+#    __STATUS__
+#
+# The features itself also contain variables to be adjusted in conf.yml
+# and will then be replaced in their corresponding feature section
+# before being replaced into the vhost section (if enabled):
+#
+# PHP-FPM:
+#    __PHP_ADDR__
+#    __PHP_PORT__
+# XDomain:
+#    __REGEX__
+# Alias:
+#    __REGEX__
+#    __PATH__
+# Deny:
+#    __REGEX__
+# Status:
+#    __REGEX__
+#
+# Variables to be replaced directly in the vhost configuration can also be set
+# in conf.yml and include:
+#    __VHOST_NAME__
+#    __DOCUMENT_ROOT__
+#    __INDEX__
+#    __ACCESS_LOG__
+#    __ERROR_LOG__
+#    __PHP_ADDR__
+#    __PHP_PORT__
+#
+
+
+###
+### Basic vHost skeleton
+###
+vhost: |
+  server {
+      listen       __PORT____HTTP_PROTO____DEFAULT_VHOST__;
+      server_name  __VHOST_NAME__;
+
+      access_log   "__ACCESS_LOG__" combined;
+      error_log    "__ERROR_LOG__" warn;
+
+  __REDIRECT__
+  __SSL__
+  __VHOST_DOCROOT__
+  __VHOST_RPROXY__
+  __PHP_FPM__
+  __ALIASES__
+  __DENIES__
+  __SERVER_STATUS__
+      # Custom directives
+  __CUSTOM__
+  }
+
+
+###
+### vHost Type (normal or reverse proxy)
+###
+vhost_type:
+  # Normal vHost (-p)
+  docroot: |
+    # Define the vhost to serve files
+    root         "__DOCUMENT_ROOT__/pub";
+    index        __INDEX__;
+
+  # Reverse Proxy (-r)
+  rproxy: |
+    # Define the vhost to reverse proxy
+    location __LOCATION__ {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_pass __PROXY_PROTO__://__PROXY_ADDR__:__PROXY_PORT__;
+    }
+
+
+###
+### Optional features to be enabled in vHost
+###
+features:
+
+  # SSL Configuration
+  ssl: |
+    ssl_certificate           __SSL_PATH_CRT__;
+    ssl_certificate_key       __SSL_PATH_KEY__;
+    ssl_protocols             __SSL_PROTOCOLS__;
+    ssl_prefer_server_ciphers __SSL_HONOR_CIPHER_ORDER__;
+    ssl_ciphers               __SSL_CIPHERS__;
+
+  # Redirect to SSL directive
+  redirect: |
+    return 301 https://__VHOST_NAME__:__SSL_PORT__$request_uri;
+
+  # PHP-FPM will not be applied to a reverse proxy!
+  php_fpm: |
+    # PHP-FPM Definition
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+    location ~ \.php?$ {
+        try_files $uri = 404;
+        include fastcgi_params;
+
+        # https://stackoverflow.com/questions/1733306/nginx-errors-readv-and-recv-failed/51457613#51457613
+        fastcgi_keep_conn off;
+
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+
+        fastcgi_pass __PHP_ADDR__:__PHP_PORT__;
+        fastcgi_read_timeout __PHP_TIMEOUT__;
+
+        fastcgi_index index.php;
+        fastcgi_intercept_errors on;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+    }
+    location /pub/ {
+        location ~ ^/pub/media/(downloadable|customer|import|custom_options|theme_customization/.*\.xml) {
+            deny all;
+        }
+        alias __DOCUMENT_ROOT__/pub/;
+        add_header X-Frame-Options "SAMEORIGIN";
+    }
+    location /static/ {
+        # Uncomment the following line in production mode
+        # expires max;
+
+        # Remove signature of the static files that is used to overcome the browser cache
+        location ~ ^/static/version {
+            rewrite ^/static/(version\d*/)?(.*)$ /static/$2 last;
+        }
+
+        location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2|html|json)$ {
+            add_header Cache-Control "public";
+            add_header X-Frame-Options "SAMEORIGIN";
+            expires +1y;
+
+            if (!-f $request_filename) {
+                rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+            }
+        }
+        location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+            add_header Cache-Control "no-store";
+            add_header X-Frame-Options "SAMEORIGIN";
+            expires    off;
+
+            if (!-f $request_filename) {
+              rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+            }
+        }
+        if (!-f $request_filename) {
+            rewrite ^/static/(version\d*/)?(.*)$ /static.php?resource=$2 last;
+        }
+        add_header X-Frame-Options "SAMEORIGIN";
+    }
+    location /media/ {
+        try_files $uri $uri/ /get.php$is_args$args;
+
+        location ~ ^/media/theme_customization/.*\.xml {
+            deny all;
+        }
+
+        location ~* \.(ico|jpg|jpeg|png|gif|svg|js|css|swf|eot|ttf|otf|woff|woff2)$ {
+            add_header Cache-Control "public";
+            add_header X-Frame-Options "SAMEORIGIN";
+            expires +1y;
+            try_files $uri $uri/ /get.php$is_args$args;
+        }
+        location ~* \.(zip|gz|gzip|bz2|csv|xml)$ {
+            add_header Cache-Control "no-store";
+            add_header X-Frame-Options "SAMEORIGIN";
+            expires    off;
+            try_files $uri $uri/ /get.php$is_args$args;
+        }
+        add_header X-Frame-Options "SAMEORIGIN";
+    }
+    location /media/customer/ {
+        deny all;
+    }
+
+    location /media/downloadable/ {
+        deny all;
+    }
+
+    location /media/import/ {
+        deny all;
+    }
+
+    location /media/custom_options/ {
+        deny all;
+    }
+
+    location /errors/ {
+        location ~* \.xml$ {
+            deny all;
+        }
+    }
+    # PHP entry point for main application
+    location ~ ^/(index|get|static|errors/report|errors/404|errors/503|health_check)\.php$ {
+        try_files $uri =404;
+        fastcgi_pass __PHP_ADDR__:__PHP_PORT__;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+
+        fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+        fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+        fastcgi_read_timeout 600s;
+        fastcgi_connect_timeout 600s;
+
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+
+    gzip on;
+    gzip_disable "msie6";
+
+    gzip_comp_level 6;
+    gzip_min_length 1100;
+    gzip_buffers 16 8k;
+    gzip_proxied any;
+    gzip_types
+        text/plain
+        text/css
+        text/js
+        text/xml
+        text/javascript
+        application/javascript
+        application/x-javascript
+        application/json
+        application/xml
+        application/xml+rss
+        image/svg+xml;
+    gzip_vary on;
+
+    # Banned locations (only reached if the earlier PHP entry point regexes don't match)
+    location ~* (\.php$|\.phtml$|\.htaccess$|\.git) {
+        deny all;
+    }
+
+  alias: |
+    # Alias Definition
+    location ~ __ALIAS__ {
+        root  __PATH__;
+    __XDOMAIN_REQ__
+    }
+
+  deny: |
+    # Deny Definition
+    location ~ __REGEX__ {
+        deny all;
+    }
+
+  server_status: |
+    # Status Page
+    location ~ __REGEX__ {
+        stub_status on;
+        access_log off;
+    }
+
+  xdomain_request: |
+    # Allow cross domain request from these hosts
+    if ( $http_origin ~* (__REGEX__) ) {
+        add_header "Access-Control-Allow-Origin" "$http_origin";
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+        add_header 'Access-Control-Expose-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+        add_header 'Access-Control-Max-Age' 0;
+        return 200;
+    }
