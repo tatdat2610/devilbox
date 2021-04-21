@@ -221,7 +221,7 @@ $RECYCLE.BIN/
 *.swn
 *.swm
 *~
-
+.env
 ###### TextMate ######
 .tm_properties
 *.tmproj
