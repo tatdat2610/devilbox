@@ -12,7 +12,8 @@
 **[Screenshots](#screenshots)** |
 **[Contributing](#contributing-)** |
 **[Logos](#logos)** |
-**[License](#license)**
+**[License](#license)** |
+**[Magento](Magento.md)**
 
 ![Devilbox](docs/_includes/figures/devilbox/devilbox-intranet-dash-all.png)
 
