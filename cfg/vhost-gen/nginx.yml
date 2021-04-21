@@ -48,7 +48,7 @@ vhost: |
   server {
       listen       __PORT____HTTP_PROTO____DEFAULT_VHOST__;
       server_name  __VHOST_NAME__;
-
+  
       access_log   "__ACCESS_LOG__" combined;
       error_log    "__ERROR_LOG__" warn;
 
@@ -221,6 +221,8 @@ features:
 
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param  HTTPS "on";
+        fastcgi_param  HTTP_X_FORWARDED_PROTO "https";
         include        fastcgi_params;
     }
 
