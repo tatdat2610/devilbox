@@ -21,3 +21,12 @@ Note: Only enable Xdebug when need to debug function, because it might affect to
    ![PhpStorm Settings](bteam/installation/xdebug/php-servers.png)
 3. Ensure DBGp proxy settings are configured
    ![PhpStorm Settings](bteam/installation/xdebug/phpstorm-dbgp-proxy.png)
+
+#### Fix bug Mysql cannot start
+  1. docker volume create --name devilbox-mysql-{version} -d local
+  2. Edit docker-compose.yml
+> volumes:
+> 
+> devilbox-mysql-{version}:
+> 
+> external: true
