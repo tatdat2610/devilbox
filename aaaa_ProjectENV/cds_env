@@ -261,10 +261,10 @@ DEVILBOX_VENDOR_PHPPGADMIN_AUTOLOGIN=1
 #PHP_SERVER=5.5
 #PHP_SERVER=5.6
 #PHP_SERVER=7.0
-#PHP_SERVER=7.1
+PHP_SERVER=7.1
 #PHP_SERVER=7.2
 #PHP_SERVER=7.3
-PHP_SERVER=7.4
+#PHP_SERVER=7.4
 #PHP_SERVER=8.0
 #PHP_SERVER=8.1
 
@@ -283,8 +283,8 @@ HTTPD_SERVER=nginx-stable
 ###
 #MYSQL_SERVER=mysql-5.5
 #MYSQL_SERVER=mysql-5.6
-#MYSQL_SERVER=mysql-5.7
-MYSQL_SERVER=mysql-8.0
+MYSQL_SERVER=mysql-5.7
+#MYSQL_SERVER=mysql-8.0
 #MYSQL_SERVER=mariadb-5.5
 #MYSQL_SERVER=mariadb-10.0
 #MYSQL_SERVER=mariadb-10.1
@@ -451,7 +451,7 @@ MONGO_SERVER=4.4
 ###
 ### MOUNT_OPTIONS=,z
 ###
-MOUNT_OPTIONS=
+MOUNT_OPTIONS=,z
 
 
 ###
@@ -512,7 +512,8 @@ PHP_MODULES_ENABLE=
 ###
 ### PHP_MODULES_DISABLE=xdebug,imagick,swoole
 ###
-PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole,psr,phalcon
+#PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole,psr,phalcon
+PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole
 
 
 ###
@@ -810,3 +811,12 @@ BIND_LOG_DNS_QUERIES=0
 ### <?php echo getenv('Foo'); ?> would produce: 'some value'
 ###
 #Foo=some value
+
+### RabbitMQ
+RABBIT_SERVER=3.8
+RABBIT_DEFAULT_VHOST=tmg
+RABBIT_DEFAULT_USER=guest
+RABBIT_DEFAULT_PASS=guest
+
+HOST_PORT_RABBIT=5672
+HOST_PORT_RABBIT_MGMT=15672

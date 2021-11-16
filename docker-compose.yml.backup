@@ -145,7 +145,7 @@ services:
       ##
       ## Enable 127.0.0.1 Port-forwarding
       ##
-      - FORWARD_PORTS_TO_LOCALHOST=80:httpd:80,443:httpd:443,3306:mysql:3306,6379:redis:6379
+      - FORWARD_PORTS_TO_LOCALHOST=80:httpd:80,443:httpd:443,3306:mysql:3306,5432:pgsql:5432,6379:redis:6379,11211:memcd:11211,27017:mongo:27017
 
       ##
       ## MySQL Backups
@@ -366,6 +366,39 @@ services:
 
     cap_add:
       - SYS_NICE
+  # ------------------------------------------------------------
+  # PostgreSQL
+  # ------------------------------------------------------------
+  pgsql:
+    image: postgres:${PGSQL_SERVER}
+    hostname: pgsql
+
+    environment:
+
+      - POSTGRES_USER=${PGSQL_ROOT_USER}
+      - POSTGRES_PASSWORD=${PGSQL_ROOT_PASSWORD}
+      - POSTGRES_HOST_AUTH_METHOD=${PGSQL_HOST_AUTH_METHOD:-trust}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+    ports:
+      # [local-machine:]local-port:docker-port
+      - "${LOCAL_LISTEN_ADDR}${HOST_PORT_PGSQL}:5432"
+
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.13
+
+    volumes:
+      # ---- Format: ----
+      # HOST-DIRECTORY : DOCKER-DIRECTORY
+
+      # Mount PostgreSQL Data directory
+      - devilbox-pgsql-${PGSQL_SERVER}:/var/lib/postgresql/data/pgdata:rw${MOUNT_OPTIONS}
+
+    depends_on:
+      - bind
+      - php
+      - httpd
 
 
   # ------------------------------------------------------------
@@ -387,6 +420,55 @@ services:
     networks:
       app_net:
         ipv4_address: 172.16.238.14
+
+    depends_on:
+      - bind
+      - php
+      - httpd
+
+
+  # ------------------------------------------------------------
+  # Memcached
+  # ------------------------------------------------------------
+  memcd:
+    image: memcached:${MEMCD_SERVER}
+    hostname: memcd
+
+    ports:
+      # [local-machine:]local-port:docker-port
+      - "${LOCAL_LISTEN_ADDR}${HOST_PORT_MEMCD}:11211"
+
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.15
+
+    depends_on:
+      - bind
+      - php
+      - httpd
+
+
+  # ------------------------------------------------------------
+  # MongoDB
+  # ------------------------------------------------------------
+  mongo:
+    image: mongo:${MONGO_SERVER}
+    hostname: mongo
+
+    ports:
+      # [local-machine:]local-port:docker-port
+      - "${LOCAL_LISTEN_ADDR}${HOST_PORT_MONGO}:27017"
+
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.16
+
+    volumes:
+      # ---- Format: ----
+      # HOST-DIRECTORY : DOCKER-DIRECTORY
+
+      # Mount MongoDB Data directory
+      - devilbox-mongo-${MONGO_SERVER}:/data/db:rw${MOUNT_OPTIONS}
 
     depends_on:
       - bind
@@ -458,8 +540,83 @@ volumes:
   devilbox-percona-5.6:
   devilbox-percona-5.7:
   devilbox-percona-8.0:
-    external: true
 
+  # ------------------------------------------------------------
+  # Postgres
+  # ------------------------------------------------------------
+  devilbox-pgsql-9.0:
+  devilbox-pgsql-9.1:
+  devilbox-pgsql-9.2:
+  devilbox-pgsql-9.2-alpine:
+  devilbox-pgsql-9.3:
+  devilbox-pgsql-9.3-alpine:
+  devilbox-pgsql-9.4:
+  devilbox-pgsql-9.4-alpine:
+  devilbox-pgsql-9.5:
+  devilbox-pgsql-9.5-alpine:
+  devilbox-pgsql-9.6:
+  devilbox-pgsql-9.6-alpine:
+  devilbox-pgsql-10.0:
+  devilbox-pgsql-10.0-alpine:
+  devilbox-pgsql-10.1:
+  devilbox-pgsql-10.1-alpine:
+  devilbox-pgsql-10.2:
+  devilbox-pgsql-10.2-alpine:
+  devilbox-pgsql-10.3:
+  devilbox-pgsql-10.3-alpine:
+  devilbox-pgsql-10.4:
+  devilbox-pgsql-10.4-alpine:
+  devilbox-pgsql-10.5:
+  devilbox-pgsql-10.5-alpine:
+  devilbox-pgsql-10.6:
+  devilbox-pgsql-10.6-alpine:
+  devilbox-pgsql-11.0:
+  devilbox-pgsql-11.0-alpine:
+  devilbox-pgsql-11.1:
+  devilbox-pgsql-11.1-alpine:
+  devilbox-pgsql-11.2:
+  devilbox-pgsql-11.2-alpine:
+  devilbox-pgsql-11.3:
+  devilbox-pgsql-11.3-alpine:
+  devilbox-pgsql-11.4:
+  devilbox-pgsql-11.4-alpine:
+  devilbox-pgsql-11.5:
+  devilbox-pgsql-11.5-alpine:
+  devilbox-pgsql-11.6:
+  devilbox-pgsql-11.6-alpine:
+  devilbox-pgsql-11.7:
+  devilbox-pgsql-11.7-alpine:
+  devilbox-pgsql-11.8:
+  devilbox-pgsql-11.8-alpine:
+  devilbox-pgsql-11.9:
+  devilbox-pgsql-11.9-alpine:
+  devilbox-pgsql-12.0:
+  devilbox-pgsql-12.0-alpine:
+  devilbox-pgsql-12.1:
+  devilbox-pgsql-12.1-alpine:
+  devilbox-pgsql-12.2:
+  devilbox-pgsql-12.2-alpine:
+  devilbox-pgsql-12.3:
+  devilbox-pgsql-12.3-alpine:
+  devilbox-pgsql-12.4:
+  devilbox-pgsql-12.4-alpine:
+  devilbox-pgsql-13.0:
+  devilbox-pgsql-13.0-alpine:
+  devilbox-pgsql-latest:
+  devilbox-pgsql-alpine:
+
+  # ------------------------------------------------------------
+  # MongoDB
+  # ------------------------------------------------------------
+  devilbox-mongo-2.8:
+  devilbox-mongo-3.0:
+  devilbox-mongo-3.2:
+  devilbox-mongo-3.4:
+  devilbox-mongo-3.6:
+  devilbox-mongo-4.0:
+  devilbox-mongo-4.2:
+  devilbox-mongo-4.4:
+  devilbox-mongo-latest:
   # ------------------------------------------------------------
   # Elastic Search
   # ------------------------------------------------------------
