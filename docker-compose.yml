@@ -95,7 +95,7 @@ services:
   # PHP
   # ------------------------------------------------------------
   php:
-    image: devilbox/php-fpm:${PHP_SERVER}-work-0.127
+    image: devilbox/php-fpm:${PHP_SERVER}-work-0.134
     hostname: php
 
     ##
@@ -233,7 +233,7 @@ services:
   # Web Server
   # ------------------------------------------------------------
   httpd:
-    image: devilbox/${HTTPD_SERVER}:0.36
+    image: devilbox/${HTTPD_SERVER}:0.39
     hostname: httpd
 
     environment:
@@ -332,7 +332,7 @@ services:
   # MySQL Database
   # ------------------------------------------------------------
   mysql:
-    image: devilbox/mysql:${MYSQL_SERVER}-0.7
+    image: devilbox/mysql:${MYSQL_SERVER}-0.8
     hostname: mysql
 
     environment:
@@ -454,6 +454,8 @@ volumes:
   devilbox-mariadb-10.4:
     external: true
   devilbox-mariadb-10.5:
+  devilbox-mariadb-10.6:
+  devilbox-mariadb-10.7:
   devilbox-percona-5.5:
   devilbox-percona-5.6:
   devilbox-percona-5.7:
