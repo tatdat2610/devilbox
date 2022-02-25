@@ -3,6 +3,22 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/data/www" />
+      <excludeFolder url="file://$MODULE_DIR$/.devilbox" />
+      <excludeFolder url="file://$MODULE_DIR$/.github" />
+      <excludeFolder url="file://$MODULE_DIR$/.tests" />
+      <excludeFolder url="file://$MODULE_DIR$/aaaa_ProjectENV" />
+      <excludeFolder url="file://$MODULE_DIR$/autostart" />
+      <excludeFolder url="file://$MODULE_DIR$/backups" />
+      <excludeFolder url="file://$MODULE_DIR$/bash" />
+      <excludeFolder url="file://$MODULE_DIR$/bteam" />
+      <excludeFolder url="file://$MODULE_DIR$/ca" />
+      <excludeFolder url="file://$MODULE_DIR$/cfg" />
+      <excludeFolder url="file://$MODULE_DIR$/compose" />
+      <excludeFolder url="file://$MODULE_DIR$/data" />
+      <excludeFolder url="file://$MODULE_DIR$/docs" />
+      <excludeFolder url="file://$MODULE_DIR$/log" />
+      <excludeFolder url="file://$MODULE_DIR$/mod" />
+      <excludeFolder url="file://$MODULE_DIR$/supervisor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

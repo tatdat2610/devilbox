@@ -1,88 +1,286 @@
-[20-Apr-2021 02:53:34] NOTICE: fpm is running, pid 1156
-[20-Apr-2021 02:53:34] NOTICE: ready to handle connections
-[20-Apr-2021 02:54:59] NOTICE: Terminating ...
-[20-Apr-2021 02:54:59] NOTICE: exiting, bye-bye!
-[20-Apr-2021 02:57:04] NOTICE: fpm is running, pid 1429
-[20-Apr-2021 02:57:04] NOTICE: ready to handle connections
-[20-Apr-2021 03:07:16] NOTICE: Terminating ...
-[20-Apr-2021 03:07:16] NOTICE: exiting, bye-bye!
-[20-Apr-2021 03:08:07] NOTICE: fpm is running, pid 1430
-[20-Apr-2021 03:08:07] NOTICE: ready to handle connections
-[20-Apr-2021 03:22:32] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 03:22:32] NOTICE: ready to handle connections
-[20-Apr-2021 03:27:03] NOTICE: Terminating ...
-[20-Apr-2021 03:27:03] NOTICE: exiting, bye-bye!
-[20-Apr-2021 03:27:18] NOTICE: fpm is running, pid 1430
-[20-Apr-2021 03:27:18] NOTICE: ready to handle connections
-[20-Apr-2021 03:28:57] NOTICE: Terminating ...
-[20-Apr-2021 03:28:57] NOTICE: exiting, bye-bye!
-[20-Apr-2021 03:29:18] NOTICE: fpm is running, pid 1429
-[20-Apr-2021 03:29:18] NOTICE: ready to handle connections
-[20-Apr-2021 03:31:02] NOTICE: Terminating ...
-[20-Apr-2021 03:31:02] NOTICE: exiting, bye-bye!
-[20-Apr-2021 03:31:14] NOTICE: fpm is running, pid 1429
-[20-Apr-2021 03:31:14] NOTICE: ready to handle connections
-[20-Apr-2021 04:07:19] NOTICE: Terminating ...
-[20-Apr-2021 04:07:19] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:07:33] NOTICE: fpm is running, pid 1430
-[20-Apr-2021 04:07:33] NOTICE: ready to handle connections
-[20-Apr-2021 04:08:21] NOTICE: Terminating ...
-[20-Apr-2021 04:08:21] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:09:01] NOTICE: fpm is running, pid 1430
-[20-Apr-2021 04:09:01] NOTICE: ready to handle connections
-[20-Apr-2021 04:10:24] NOTICE: Terminating ...
-[20-Apr-2021 04:10:24] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:10:37] NOTICE: fpm is running, pid 1429
-[20-Apr-2021 04:10:37] NOTICE: ready to handle connections
-[20-Apr-2021 04:10:45] NOTICE: Terminating ...
-[20-Apr-2021 04:10:45] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:12:00] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:12:00] NOTICE: ready to handle connections
-[20-Apr-2021 04:12:43] NOTICE: Terminating ...
-[20-Apr-2021 04:12:43] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:12:52] NOTICE: fpm is running, pid 1150
-[20-Apr-2021 04:12:52] NOTICE: ready to handle connections
-[20-Apr-2021 04:13:31] NOTICE: Terminating ...
-[20-Apr-2021 04:13:31] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:13:44] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:13:44] NOTICE: ready to handle connections
-[20-Apr-2021 04:16:55] NOTICE: Terminating ...
-[20-Apr-2021 04:16:55] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:17:08] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:17:08] NOTICE: ready to handle connections
-[20-Apr-2021 04:20:02] NOTICE: Terminating ...
-[20-Apr-2021 04:20:02] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:20:15] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:20:15] NOTICE: ready to handle connections
-[20-Apr-2021 04:21:18] NOTICE: Terminating ...
-[20-Apr-2021 04:21:18] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:21:29] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:21:29] NOTICE: ready to handle connections
-[20-Apr-2021 04:23:56] NOTICE: Terminating ...
-[20-Apr-2021 04:23:56] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:24:06] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:24:06] NOTICE: ready to handle connections
-[20-Apr-2021 04:27:16] NOTICE: Terminating ...
-[20-Apr-2021 04:27:16] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:27:32] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:27:32] NOTICE: ready to handle connections
-[20-Apr-2021 04:28:45] NOTICE: Terminating ...
-[20-Apr-2021 04:28:45] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:28:56] NOTICE: fpm is running, pid 1149
-[20-Apr-2021 04:28:56] NOTICE: ready to handle connections
-[20-Apr-2021 04:34:05] NOTICE: Terminating ...
-[20-Apr-2021 04:34:05] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:34:39] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:34:39] NOTICE: ready to handle connections
-[20-Apr-2021 04:39:21] NOTICE: Terminating ...
-[20-Apr-2021 04:39:21] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:39:31] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 04:39:31] NOTICE: ready to handle connections
-[20-Apr-2021 04:41:18] NOTICE: Terminating ...
-[20-Apr-2021 04:41:18] NOTICE: exiting, bye-bye!
-[20-Apr-2021 04:41:28] NOTICE: fpm is running, pid 1149
-[20-Apr-2021 04:41:28] NOTICE: ready to handle connections
-[20-Apr-2021 05:05:18] NOTICE: Terminating ...
-[20-Apr-2021 05:05:18] NOTICE: exiting, bye-bye!
-[20-Apr-2021 05:05:42] NOTICE: fpm is running, pid 1148
-[20-Apr-2021 05:05:42] NOTICE: ready to handle connections
+[04-Nov-2021 04:19:28] NOTICE: Terminating ...
+[04-Nov-2021 04:19:28] NOTICE: exiting, bye-bye!
+[04-Nov-2021 13:11:42] NOTICE: fpm is running, pid 1436
+[04-Nov-2021 13:11:42] NOTICE: ready to handle connections
+[04-Nov-2021 13:12:02] NOTICE: Terminating ...
+[04-Nov-2021 13:12:02] NOTICE: exiting, bye-bye!
+[04-Nov-2021 13:12:27] NOTICE: fpm is running, pid 1438
+[04-Nov-2021 13:12:27] NOTICE: ready to handle connections
+[04-Nov-2021 13:13:12] NOTICE: Terminating ...
+[04-Nov-2021 13:13:12] NOTICE: exiting, bye-bye!
+[04-Nov-2021 13:13:19] NOTICE: fpm is running, pid 1435
+[04-Nov-2021 13:13:19] NOTICE: ready to handle connections
+[04-Nov-2021 13:15:25] NOTICE: Terminating ...
+[04-Nov-2021 13:15:25] NOTICE: exiting, bye-bye!
+[04-Nov-2021 13:15:56] NOTICE: fpm is running, pid 1435
+[04-Nov-2021 13:15:56] NOTICE: ready to handle connections
+[04-Nov-2021 15:39:59] NOTICE: Terminating ...
+[04-Nov-2021 15:39:59] NOTICE: exiting, bye-bye!
+[05-Nov-2021 03:58:01] NOTICE: fpm is running, pid 1126
+[05-Nov-2021 03:58:01] NOTICE: ready to handle connections
+[05-Nov-2021 03:58:15] NOTICE: Terminating ...
+[05-Nov-2021 03:58:15] NOTICE: exiting, bye-bye!
+[05-Nov-2021 03:59:59] NOTICE: fpm is running, pid 1435
+[05-Nov-2021 03:59:59] NOTICE: ready to handle connections
+[05-Nov-2021 13:06:54] NOTICE: fpm is running, pid 1435
+[05-Nov-2021 13:06:54] NOTICE: ready to handle connections
+[05-Nov-2021 13:32:54] WARNING: [pool www] child 4947, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (122.733837 sec), terminating
+[05-Nov-2021 13:32:54] WARNING: [pool www] child 4947 exited on signal 15 (SIGTERM) after 122.752364 seconds from start
+[05-Nov-2021 13:32:54] NOTICE: [pool www] child 5192 started
+[05-Nov-2021 13:36:14] WARNING: [pool www] child 5296, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "GET /index.php") execution timed out (129.130256 sec), terminating
+[05-Nov-2021 13:36:14] WARNING: [pool www] child 5296 exited on signal 15 (SIGTERM) after 153.236877 seconds from start
+[05-Nov-2021 13:36:14] NOTICE: [pool www] child 5607 started
+[05-Nov-2021 14:53:34] WARNING: [pool www] child 14728, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (121.868501 sec), terminating
+[05-Nov-2021 14:53:34] WARNING: [pool www] child 14728 exited on signal 15 (SIGTERM) after 121.882647 seconds from start
+[05-Nov-2021 14:53:34] NOTICE: [pool www] child 14974 started
+[05-Nov-2021 15:25:34] WARNING: [pool www] child 18569, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (121.268268 sec), terminating
+[05-Nov-2021 15:25:34] WARNING: [pool www] child 18569 exited on signal 15 (SIGTERM) after 121.278819 seconds from start
+[05-Nov-2021 15:25:34] NOTICE: [pool www] child 18812 started
+[05-Nov-2021 15:33:34] WARNING: [pool www] child 19265, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (133.826921 sec), terminating
+[05-Nov-2021 15:33:34] WARNING: [pool www] child 19265 exited on signal 15 (SIGTERM) after 252.528095 seconds from start
+[05-Nov-2021 15:33:34] NOTICE: [pool www] child 19770 started
+[05-Nov-2021 15:38:14] WARNING: [pool www] child 19911, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (121.876979 sec), terminating
+[05-Nov-2021 15:38:14] WARNING: [pool www] child 19911 exited on signal 15 (SIGTERM) after 209.694435 seconds from start
+[05-Nov-2021 15:38:14] NOTICE: [pool www] child 20328 started
+[05-Nov-2021 16:37:34] WARNING: [pool www] child 27245, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "POST /index.php") execution timed out (124.763958 sec), terminating
+[05-Nov-2021 16:37:34] WARNING: [pool www] child 27245 exited on signal 15 (SIGTERM) after 124.772495 seconds from start
+[05-Nov-2021 16:37:34] NOTICE: [pool www] child 27494 started
+[05-Nov-2021 16:54:25] NOTICE: Terminating ...
+[05-Nov-2021 16:54:25] NOTICE: exiting, bye-bye!
+[06-Nov-2021 01:28:37] NOTICE: fpm is running, pid 1126
+[06-Nov-2021 01:28:37] NOTICE: ready to handle connections
+[06-Nov-2021 01:57:59 UTC] PHP Fatal error:  Uncaught Exception: User Error: Some transactions have not been committed or rolled back in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php on line 4050 in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(256, 'Some transactio...', '/shared/httpd/s...', 4050, Array)
+#1 /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4050): trigger_error('Some transactio...', 256)
+#2 [internal function]: Magento\Framework\DB\Adapter\Pdo\Mysql->__destruct()
+#3 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php on line 61
+[06-Nov-2021 01:59:43 UTC] PHP Fatal error:  Uncaught Exception: User Error: Some transactions have not been committed or rolled back in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php on line 4050 in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(256, 'Some transactio...', '/shared/httpd/s...', 4050, Array)
+#1 /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4050): trigger_error('Some transactio...', 256)
+#2 [internal function]: Magento\Framework\DB\Adapter\Pdo\Mysql->__destruct()
+#3 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php on line 61
+[06-Nov-2021 02:00:16 UTC] PHP Fatal error:  Uncaught Exception: User Error: Some transactions have not been committed or rolled back in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php on line 4050 in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(256, 'Some transactio...', '/shared/httpd/s...', 4050, Array)
+#1 /shared/httpd/scgmarket/htdocs/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(4050): trigger_error('Some transactio...', 256)
+#2 [internal function]: Magento\Framework\DB\Adapter\Pdo\Mysql->__destruct()
+#3 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/vendor/magento/framework/App/ErrorHandler.php on line 61
+[06-Nov-2021 02:00:59 UTC] PHP Fatal error:  Uncaught Dompdf\Exception: Unable to process fonts of type ''. in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php:100
+Stack trace:
+#0 /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php(201): install_font_family(Object(Dompdf\Dompdf), 'Maitree', '/shared/httpd/s...')
+#1 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php on line 100
+[06-Nov-2021 02:06:10 UTC] PHP Fatal error:  Uncaught Dompdf\Exception: Unable to process fonts of type ''. in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php:100
+Stack trace:
+#0 /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php(203): install_font_family(Object(Dompdf\Dompdf), 'Maitree', '/shared/httpd/s...')
+#1 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php on line 100
+[06-Nov-2021 02:07:30 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[06-Nov-2021 02:07:30 UTC] PHP Fatal error:  Uncaught Dompdf\Exception: Unable to process fonts of type ''. in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php:100
+Stack trace:
+#0 /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php(201): install_font_family(Object(Dompdf\Dompdf), 'Maitree', '/shared/httpd/s...')
+#1 {main}
+  thrown in /shared/httpd/scgmarket/htdocs/app/code/Scgp/SalesPdf/Setup/Dompdf/Utils/load_font.php on line 100
+[06-Nov-2021 03:31:57] WARNING: [pool www] child 16401, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "GET /index.php?query=query%7B%0A%20%20salesRules(filters:%20%7Bcoupon_type:1%7D)%7B%0A%20%20%20%20coupon_code%0A%20%20%20%20description%0A%20%20%20%20from_date%0A%20%20%20%20name%0A%20%20%20%20to_date%0A%20%20%7D%0A%7D&variables=%7B%7D") execution timed out (131.606470 sec), terminating
+[06-Nov-2021 03:31:57] WARNING: [pool www] child 16401 exited on signal 15 (SIGTERM) after 131.610955 seconds from start
+[06-Nov-2021 03:31:57] NOTICE: [pool www] child 16664 started
+[06-Nov-2021 14:55:39] NOTICE: Terminating ...
+[06-Nov-2021 14:55:39] NOTICE: exiting, bye-bye!
+[07-Nov-2021 01:14:45] NOTICE: fpm is running, pid 1126
+[07-Nov-2021 01:14:45] NOTICE: ready to handle connections
+[07-Nov-2021 14:44:31] NOTICE: Terminating ...
+[07-Nov-2021 14:44:31] NOTICE: exiting, bye-bye!
+[07-Nov-2021 15:08:54] NOTICE: fpm is running, pid 1126
+[07-Nov-2021 15:08:54] NOTICE: ready to handle connections
+[07-Nov-2021 15:14:31] NOTICE: Terminating ...
+[07-Nov-2021 15:14:31] NOTICE: exiting, bye-bye!
+[08-Nov-2021 02:06:04] NOTICE: fpm is running, pid 1126
+[08-Nov-2021 02:06:04] NOTICE: ready to handle connections
+[08-Nov-2021 13:27:55] NOTICE: fpm is running, pid 1437
+[08-Nov-2021 13:27:55] NOTICE: ready to handle connections
+[08-Nov-2021 19:38:59] NOTICE: Terminating ...
+[08-Nov-2021 19:38:59] NOTICE: exiting, bye-bye!
+[09-Nov-2021 14:56:53] NOTICE: fpm is running, pid 1126
+[09-Nov-2021 14:56:53] NOTICE: ready to handle connections
+[09-Nov-2021 14:57:33] NOTICE: fpm is running, pid 1436
+[09-Nov-2021 14:57:33] NOTICE: ready to handle connections
+[09-Nov-2021 15:10:09] NOTICE: Terminating ...
+[09-Nov-2021 15:10:09] NOTICE: exiting, bye-bye!
+[10-Nov-2021 02:41:17] NOTICE: fpm is running, pid 1126
+[10-Nov-2021 02:41:17] NOTICE: ready to handle connections
+[10-Nov-2021 10:57:32] NOTICE: Terminating ...
+[10-Nov-2021 10:57:32] NOTICE: exiting, bye-bye!
+[11-Nov-2021 02:47:43] NOTICE: fpm is running, pid 1126
+[11-Nov-2021 02:47:43] NOTICE: ready to handle connections
+[11-Nov-2021 03:09:48] NOTICE: fpm is running, pid 1435
+[11-Nov-2021 03:09:48] NOTICE: ready to handle connections
+[11-Nov-2021 14:04:02] NOTICE: fpm is running, pid 1435
+[11-Nov-2021 14:04:02] NOTICE: ready to handle connections
+[11-Nov-2021 15:55:14] NOTICE: Terminating ...
+[11-Nov-2021 15:55:14] NOTICE: exiting, bye-bye!
+[12-Nov-2021 02:15:04] NOTICE: fpm is running, pid 1126
+[12-Nov-2021 02:15:04] NOTICE: ready to handle connections
+[12-Nov-2021 02:49:27 UTC] PHP Fatal error:  Class Scgp\SalesPdf\Model\ResourceModel\ExportFtp\Collection contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Magento\Cms\Model\ResourceModel\AbstractCollection::addStoreFilter) in /shared/httpd/scgmarket/htdocs/vendor/scgp/module-sales-pdf/Model/ResourceModel/ExportFtp/Collection.php on line 23
+[12-Nov-2021 03:19:44] WARNING: [pool www] child 9275, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "GET /index.php") execution timed out (157.471210 sec), terminating
+[12-Nov-2021 03:19:44] WARNING: [pool www] child 9275 exited on signal 15 (SIGTERM) after 157.477380 seconds from start
+[12-Nov-2021 03:19:44] NOTICE: [pool www] child 9588 started
+[12-Nov-2021 04:57:45] WARNING: [pool www] child 21489, script '/shared/httpd/scgmarket/htdocs/pub/index.php' (request: "GET /index.php") execution timed out (127.503213 sec), terminating
+[12-Nov-2021 04:57:45] WARNING: [pool www] child 21489 exited on signal 15 (SIGTERM) after 127.525895 seconds from start
+[12-Nov-2021 04:57:45] NOTICE: [pool www] child 21744 started
+[12-Nov-2021 13:29:04] NOTICE: Terminating ...
+[12-Nov-2021 13:29:04] NOTICE: exiting, bye-bye!
+[15-Nov-2021 08:13:32] NOTICE: fpm is running, pid 1126
+[15-Nov-2021 08:13:32] NOTICE: ready to handle connections
+[15-Nov-2021 12:42:45] NOTICE: fpm is running, pid 1435
+[15-Nov-2021 12:42:45] NOTICE: ready to handle connections
+[16-Nov-2021 02:08:04] NOTICE: Terminating ...
+[16-Nov-2021 02:08:04] NOTICE: exiting, bye-bye!
+[16-Nov-2021 14:23:14] NOTICE: fpm is running, pid 1435
+[16-Nov-2021 14:23:14] NOTICE: ready to handle connections
+[16-Nov-2021 14:59:02] NOTICE: Terminating ...
+[16-Nov-2021 14:59:02] NOTICE: exiting, bye-bye!
+[16-Nov-2021 15:25:13] NOTICE: fpm is running, pid 1126
+[16-Nov-2021 15:25:13] NOTICE: ready to handle connections
+[16-Nov-2021 15:36:17] NOTICE: Terminating ...
+[16-Nov-2021 15:36:17] NOTICE: exiting, bye-bye!
+[17-Nov-2021 02:27:01] NOTICE: fpm is running, pid 1126
+[17-Nov-2021 02:27:01] NOTICE: ready to handle connections
+[17-Nov-2021 14:24:51] NOTICE: fpm is running, pid 1435
+[17-Nov-2021 14:24:51] NOTICE: ready to handle connections
+[17-Nov-2021 15:04:10] NOTICE: Terminating ...
+[17-Nov-2021 15:04:10] NOTICE: exiting, bye-bye!
+[18-Nov-2021 00:26:01] NOTICE: fpm is running, pid 1127
+[18-Nov-2021 00:26:01] NOTICE: ready to handle connections
+[18-Nov-2021 04:42:05] NOTICE: Terminating ...
+[18-Nov-2021 04:42:05] NOTICE: exiting, bye-bye!
+[18-Nov-2021 06:50:49] NOTICE: fpm is running, pid 1126
+[18-Nov-2021 06:50:49] NOTICE: ready to handle connections
+[18-Nov-2021 13:55:50] NOTICE: fpm is running, pid 1436
+[18-Nov-2021 13:55:50] NOTICE: ready to handle connections
+[19-Nov-2021 01:30:12] NOTICE: Terminating ...
+[19-Nov-2021 01:30:12] NOTICE: exiting, bye-bye!
+[19-Nov-2021 02:38:21] NOTICE: fpm is running, pid 1127
+[19-Nov-2021 02:38:21] NOTICE: ready to handle connections
+[19-Nov-2021 15:08:17] NOTICE: fpm is running, pid 1435
+[19-Nov-2021 15:08:17] NOTICE: ready to handle connections
+[19-Nov-2021 15:39:30] NOTICE: Terminating ...
+[19-Nov-2021 15:39:30] NOTICE: exiting, bye-bye!
+[21-Nov-2021 03:26:20] NOTICE: fpm is running, pid 1126
+[21-Nov-2021 03:26:20] NOTICE: ready to handle connections
+[21-Nov-2021 11:12:29] NOTICE: Terminating ...
+[21-Nov-2021 11:12:29] NOTICE: exiting, bye-bye!
+[22-Nov-2021 06:57:41] NOTICE: fpm is running, pid 1126
+[22-Nov-2021 06:57:41] NOTICE: ready to handle connections
+[22-Nov-2021 06:57:41] NOTICE: Terminating ...
+[22-Nov-2021 06:57:41] NOTICE: exiting, bye-bye!
+[26-Jan-2022 09:53:27] NOTICE: fpm is running, pid 1434
+[26-Jan-2022 09:53:27] NOTICE: ready to handle connections
+[26-Jan-2022 09:54:38] NOTICE: fpm is running, pid 1541
+[26-Jan-2022 09:54:38] NOTICE: ready to handle connections
+[26-Jan-2022 10:03:05] NOTICE: Terminating ...
+[26-Jan-2022 10:03:05] NOTICE: exiting, bye-bye!
+[18-Feb-2022 12:25:36] NOTICE: fpm is running, pid 1445
+[18-Feb-2022 12:25:36] NOTICE: ready to handle connections
+[18-Feb-2022 17:04:10] NOTICE: Terminating ...
+[18-Feb-2022 17:04:10] NOTICE: exiting, bye-bye!
+[21-Feb-2022 02:04:00] NOTICE: fpm is running, pid 1136
+[21-Feb-2022 02:04:00] NOTICE: ready to handle connections
+[24-Feb-2022 11:04:44] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 11:04:44] NOTICE: ready to handle connections
+[24-Feb-2022 13:32:47] NOTICE: Terminating ...
+[24-Feb-2022 13:32:47] NOTICE: exiting, bye-bye!
+[24-Feb-2022 13:32:54] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 13:32:54] NOTICE: ready to handle connections
+[24-Feb-2022 13:33:03] NOTICE: Terminating ...
+[24-Feb-2022 13:33:03] NOTICE: exiting, bye-bye!
+[24-Feb-2022 13:33:14] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 13:33:14] NOTICE: ready to handle connections
+[24-Feb-2022 14:16:29] NOTICE: Terminating ...
+[24-Feb-2022 14:16:29] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:16:42] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:16:42] NOTICE: ready to handle connections
+[24-Feb-2022 14:46:46] NOTICE: Terminating ...
+[24-Feb-2022 14:46:46] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:47:39] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:47:39] NOTICE: ready to handle connections
+[24-Feb-2022 14:54:04] NOTICE: Terminating ...
+[24-Feb-2022 14:54:04] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:54:11] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:54:11] NOTICE: ready to handle connections
+[24-Feb-2022 14:54:12] NOTICE: Terminating ...
+[24-Feb-2022 14:54:12] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:54:29] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:54:29] NOTICE: ready to handle connections
+[24-Feb-2022 14:55:11] NOTICE: Terminating ...
+[24-Feb-2022 14:55:11] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:56:01] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:56:01] NOTICE: ready to handle connections
+[24-Feb-2022 14:56:46] NOTICE: Terminating ...
+[24-Feb-2022 14:56:46] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:57:22] NOTICE: fpm is running, pid 1434
+[24-Feb-2022 14:57:22] NOTICE: ready to handle connections
+[24-Feb-2022 14:57:56] NOTICE: Terminating ...
+[24-Feb-2022 14:57:56] NOTICE: exiting, bye-bye!
+[24-Feb-2022 14:59:52] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 14:59:52] NOTICE: ready to handle connections
+[24-Feb-2022 15:03:09] NOTICE: Terminating ...
+[24-Feb-2022 15:03:09] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:03:15] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 15:03:15] NOTICE: ready to handle connections
+[24-Feb-2022 15:05:48] NOTICE: Terminating ...
+[24-Feb-2022 15:05:48] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:06:23] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 15:06:23] NOTICE: ready to handle connections
+[24-Feb-2022 15:08:56] NOTICE: Terminating ...
+[24-Feb-2022 15:08:56] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:09:09] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 15:09:09] NOTICE: ready to handle connections
+[24-Feb-2022 15:15:14] NOTICE: Terminating ...
+[24-Feb-2022 15:15:14] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:15:28] NOTICE: fpm is running, pid 1434
+[24-Feb-2022 15:15:28] NOTICE: ready to handle connections
+[24-Feb-2022 15:17:46] NOTICE: Terminating ...
+[24-Feb-2022 15:17:46] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:18:15] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 15:18:15] NOTICE: ready to handle connections
+[24-Feb-2022 15:23:24] NOTICE: Terminating ...
+[24-Feb-2022 15:23:24] NOTICE: exiting, bye-bye!
+[24-Feb-2022 15:23:38] NOTICE: fpm is running, pid 1433
+[24-Feb-2022 15:23:38] NOTICE: ready to handle connections
+[24-Feb-2022 16:03:35] NOTICE: Terminating ...
+[24-Feb-2022 16:03:35] NOTICE: exiting, bye-bye!
+[25-Feb-2022 03:02:36] NOTICE: fpm is running, pid 1124
+[25-Feb-2022 03:02:36] NOTICE: ready to handle connections
+[25-Feb-2022 03:30:02] NOTICE: Terminating ...
+[25-Feb-2022 03:30:02] NOTICE: exiting, bye-bye!
+[25-Feb-2022 03:30:46] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 03:30:46] NOTICE: ready to handle connections
+[25-Feb-2022 03:34:36] NOTICE: Terminating ...
+[25-Feb-2022 03:34:36] NOTICE: exiting, bye-bye!
+[25-Feb-2022 03:34:52] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 03:34:52] NOTICE: ready to handle connections
+[25-Feb-2022 03:37:08] NOTICE: Terminating ...
+[25-Feb-2022 03:37:08] NOTICE: exiting, bye-bye!
+[25-Feb-2022 03:37:18] NOTICE: fpm is running, pid 1434
+[25-Feb-2022 03:37:18] NOTICE: ready to handle connections
+[25-Feb-2022 04:02:18] NOTICE: Terminating ...
+[25-Feb-2022 04:02:18] NOTICE: exiting, bye-bye!
+[25-Feb-2022 04:02:29] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 04:02:29] NOTICE: ready to handle connections
+[25-Feb-2022 04:09:34] NOTICE: Terminating ...
+[25-Feb-2022 04:09:34] NOTICE: exiting, bye-bye!
+[25-Feb-2022 04:10:11] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 04:10:11] NOTICE: ready to handle connections
+[25-Feb-2022 04:16:38] NOTICE: Terminating ...
+[25-Feb-2022 04:16:38] NOTICE: exiting, bye-bye!
+[25-Feb-2022 04:16:56] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 04:16:56] NOTICE: ready to handle connections
+[25-Feb-2022 04:18:12] NOTICE: Terminating ...
+[25-Feb-2022 04:18:12] NOTICE: exiting, bye-bye!
+[25-Feb-2022 04:18:25] NOTICE: fpm is running, pid 1433
+[25-Feb-2022 04:18:25] NOTICE: ready to handle connections
