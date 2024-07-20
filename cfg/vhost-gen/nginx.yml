@@ -47,8 +47,8 @@
 vhost: |
   server {
       listen       __PORT____HTTP_PROTO____DEFAULT_VHOST__;
-      server_name  __VHOST_NAME__;
-  
+      server_name  __VHOST_NAME__ api.__VHOST_NAME__;
+
       access_log   "__ACCESS_LOG__" combined;
       error_log    "__ERROR_LOG__" warn;
 
@@ -209,6 +209,20 @@ features:
     }
     # PHP entry point for main application
     location ~ ^/(index|get|static|errors/report|errors/404|errors/503|health_check)\.php$ {
+        set $cors_origin "*";
+            if ($request_method = 'OPTIONS') {
+              add_header 'Access-Control-Allow-Origin' $cors_origin always;
+        #     add_header 'Access-Control-Allow-Methods' '*' always;
+              add_header 'Access-Control-Allow-Methods' 'POST, GET, OPTIONS' always;
+              add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Cache-Hash,x-magento-cache-id,store,x-recaptcha,content-currency' always;  ### Tell client that this pre-flight info is valid for 20 days
+              add_header 'Access-Control-Max-Age' 1728000;
+              add_header 'Content-Type' 'text/plain charset=UTF-8';
+              add_header 'Content-Length' 0;
+              return 204;
+            }
+
+            add_header 'Access-Control-Allow-Origin' $cors_origin always;
+
         try_files $uri =404;
         fastcgi_pass __PHP_ADDR__:__PHP_PORT__;
         fastcgi_buffers 16 16k;

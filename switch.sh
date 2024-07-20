@@ -1,5 +1,5 @@
-docker-compose up -d
+docker compose up -d
 
-docker-compose stop
+docker compose stop
 
-docker-compose rm -f
+docker compose rm -f
