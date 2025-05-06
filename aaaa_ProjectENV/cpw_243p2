@@ -503,7 +503,7 @@ HOST_PATH_SSH_DIR=~/.ssh
 ###
 ### PHP_MODULES_ENABLE=ioncube, blackfire
 ###
-PHP_MODULES_ENABLE=blackfire
+PHP_MODULES_ENABLE=
 
 
 ###
@@ -514,7 +514,7 @@ PHP_MODULES_ENABLE=blackfire
 ### PHP_MODULES_DISABLE=xdebug,imagick,swoole
 ###
 #PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole,psr,phalcon
-PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole,xdebug
+PHP_MODULES_DISABLE=oci8,PDO_OCI,pdo_sqlsrv,sqlsrv,rdkafka,swoole
 
 
 ###

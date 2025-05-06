@@ -34,7 +34,7 @@ services:
   # Bind (DNS Server)
   # ------------------------------------------------------------
   bind:
-    image: cytopia/bind:alpine-0.28
+    image: cytopia/bind:0.15
     hostname: bind
     restart: always
     ports:
@@ -51,7 +51,8 @@ services:
       ##
       ## Bind wildcard/host settings
       ##
-      - DNS_A=*.${TLD_SUFFIX:-loc}=127.0.0.1,${EXTRA_HOSTS:-}
+      - WILDCARD_DNS=${TLD_SUFFIX:-loc}=127.0.0.1
+      - EXTRA_HOSTS=${EXTRA_HOSTS}
 
       ##
       ## Forwarding
@@ -94,7 +95,7 @@ services:
   # PHP
   # ------------------------------------------------------------
   php:
-    image: devilbox/php-fpm:${PHP_SERVER}-work-0.139
+    image: devilbox/php-fpm:${PHP_SERVER}-work-0.127
     hostname: php
 
     ##
@@ -160,7 +161,6 @@ services:
     extra_hosts:
       docker.for.lin.host.internal: 172.16.238.1
       docker.for.lin.localhost: 172.16.238.1
-      host.docker.internal: 172.16.238.1
 
     networks:
       app_net:
@@ -216,25 +216,24 @@ services:
     depends_on:
       - bind
 
-  #  kibana:
-  #    image: docker.elastic.co/kibana/kibana-oss:7.10.1
-  #    hostname: kibana
-  #    ports:
-  #      - "${LOCAL_LISTEN_ADDR}${HOST_PORT_ELK_KIBANA:-5601}:5601"
-  #    networks:
-  #      app_net:
-  #        ipv4_address: 172.16.238.242
-  #    environment:
-  #      - TZ=${TIMEZONE:-UTC}
-  #      - ELASTICSEARCH_HOSTS=http://elastic:9200
-  #      - ELASTICSEARCH_URL=http://elastic:9200
-  #    depends_on:
-  #      - elastic
+  elastic:
+      image: elasticsearch:${ELK_SERVER:-7.17.28}
+      hostname: elastic
+      ports:
+        - "${LOCAL_LISTEN_ADDR}${HOST_PORT_ELK_ELASTIC:-9200}:9200"
+      networks:
+        app_net:
+          ipv4_address: 172.16.238.240
+      environment:
+        - TZ=${TIMEZONE:-UTC}
+        - discovery.type=single-node
+      volumes:
+        - devilbox-elastic:/usr/share/elasticsearch/data
   # ------------------------------------------------------------
   # Web Server
   # ------------------------------------------------------------
   httpd:
-    image: devilbox/${HTTPD_SERVER}:${HTTPD_FLAVOUR:-alpine}-0.47
+    image: devilbox/${HTTPD_SERVER}:0.36
     hostname: httpd
 
     environment:
@@ -262,11 +261,6 @@ services:
       ##
       - WORKER_PROCESSES=${HTTPD_NGINX_WORKER_PROCESSES:-auto}
       - WORKER_CONNECTIONS=${HTTPD_NGINX_WORKER_CONNECTIONS:-1024}
-
-      ##
-      ## Globally enable/disable HTTP/2
-      ##
-      - HTTP2_ENABLE=${HTTPD_HTTP2_ENABLE:-1}
 
       ##
       ## Disable default vhost?
@@ -338,7 +332,7 @@ services:
   # MySQL Database
   # ------------------------------------------------------------
   mysql:
-    image: devilbox/mysql:${MYSQL_SERVER}-0.15
+    image: devilbox/mysql:${MYSQL_SERVER}-0.7
     hostname: mysql
 
     environment:
@@ -361,7 +355,6 @@ services:
       # to overwrite the MySQL server configuration
       - ${DEVILBOX_PATH}/.devilbox/cfg/mysql.cnf:/etc/mysql/conf.d/devilbox.cnf:ro${MOUNT_OPTIONS}
       - ${DEVILBOX_PATH}/cfg/${MYSQL_SERVER}:/etc/mysql/docker-default.d:ro${MOUNT_OPTIONS}
-      - ${DEVILBOX_PATH}/data/mysql57:/var/backups:ro${MOUNT_OPTIONS}
 
       # Mount MySQL Data directory
       - devilbox-${MYSQL_SERVER}:/var/lib/mysql:rw${MOUNT_OPTIONS}
@@ -374,46 +367,6 @@ services:
     cap_add:
       - SYS_NICE
 
-  opensearch-node1:
-    image: opensearchproject/opensearch:2.5.0
-    container_name: opensearch-node1
-    environment:
-      - cluster.name=opensearch-cluster
-      - node.name=opensearch-node1
-      - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
-      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
-      - "DISABLE_INSTALL_DEMO_CONFIG=true" # disables execution of install_demo_configuration.sh bundled with security plugin, which installs demo certificates and security configurations to OpenSearch
-      - "DISABLE_SECURITY_PLUGIN=true" # disables security plugin entirely in OpenSearch by setting plugins.security.disabled: true in opensearch.yml
-      - "discovery.type=single-node" # disables bootstrap checks that are enabled when network.host is set to a non-loopback address
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536 # maximum number of open files for the OpenSearch user, set to at least 65536 on modern systems
-        hard: 65536
-    volumes:
-      - opensearch-data1:/usr/share/opensearch/data
-    ports:
-      - 9200:9200
-      - 9600:9600 # required for Performance Analyzer
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.50
-
-  opensearch-dashboards:
-    image: opensearchproject/opensearch-dashboards:2.5.0
-    container_name: opensearch-dashboards
-    ports:
-      - 5601:5601
-    expose:
-      - "5601"
-    environment:
-      - 'OPENSEARCH_HOSTS=["http://opensearch-node1:9200"]'
-      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true" # disables security dashboards plugin in OpenSearch Dashboards
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.60
 
   # ------------------------------------------------------------
   # Redis
@@ -455,8 +408,8 @@ services:
         ipv4_address: 172.16.238.210
     volumes:
       - devilbox-rabbit:/var/lib/rabbitmq
-      # Mount devilbox user-defined *.ini files in order
-      # to overwrite the default PHP.ini configuration
+        # Mount devilbox user-defined *.ini files in order
+        # to overwrite the default PHP.ini configuration
       - ${DEVILBOX_PATH}/cfg/rabbit:/etc/rabbitmq/conf.d:ro${MOUNT_OPTIONS}
     depends_on:
       - bind
@@ -481,25 +434,7 @@ services:
       - bind
       - php
       - httpd
-  # -----------------------------------------------------------------------------------------------
-  # Ngrok
-  # -----------------------------------------------------------------------------------------------
-  ngrok:
-    image: devilbox/ngrok:0.3
-    hostname: ngrok
-    environment:
-      - HTTP_TUNNELS=${NGROK_HTTP_TUNNELS:-httpd:httpd:80}
-      - AUTHTOKEN=${NGROK_AUTHTOKEN:-}
-      - REGION=${NGROK_REGION:-us}
-    ports:
-      - "${LOCAL_LISTEN_ADDR}${HOST_PORT_NGROK:-4040}:4040"
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.202
-    depends_on:
-      - bind
-      - php
-      - httpd
+
 
 ################################################################################
 # NETWORK
@@ -533,7 +468,6 @@ volumes:
   devilbox-mysql-5.7:
     external: true
   devilbox-mysql-8.0:
-    external: true
   devilbox-mariadb-5.5:
   devilbox-mariadb-10.0:
   devilbox-mariadb-10.1:
@@ -542,8 +476,6 @@ volumes:
   devilbox-mariadb-10.4:
     external: true
   devilbox-mariadb-10.5:
-  devilbox-mariadb-10.6:
-  devilbox-mariadb-10.7:
   devilbox-percona-5.5:
   devilbox-percona-5.6:
   devilbox-percona-5.7:
@@ -559,9 +491,3 @@ volumes:
   # RabbitMQ
   # ------------------------------------------------------------
   devilbox-rabbit:
-
-  # ------------------------------------------------------------
-  # Open Search
-  # ------------------------------------------------------------
-  opensearch-data1:
-    external: true
